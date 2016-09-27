@@ -8,7 +8,7 @@ import {WizardComponent} from "./wizard.component";
     <h3>Select a wizard type</h3>
     <div class="radio" *ngFor="let type of types">
       <label>
-        <input type="radio" name="type" [(ngModel)]="wizardComponent.wizard.type" [value]="type">
+        <input type="radio" name="type" [(ngModel)]="selectedType" [value]="type">
         {{type}}
       </label>
     </div>
@@ -18,7 +18,9 @@ import {WizardComponent} from "./wizard.component";
 export class WizardTypeComponent {
     types = ['Magician', 'Warlock', 'Sorcerer'];
 
-    constructor(public wizardComponent: WizardComponent) {
+    selectedType: string;
+
+    constructor() {
 
     }
 }
